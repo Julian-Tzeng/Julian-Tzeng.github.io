@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://bit.webduino.io/blockly/live-preview.html#-MUWNkTRIj6ynGR2Nx2T -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Webduino Blockly Demo 02</title>
+  <script src="./Webduino Blockly Demo 02_files/jquery.min.js.下載"></script>
+  <script src="./Webduino Blockly Demo 02_files/webduino-all.min.js.下載"></script>
+  <script src="./Webduino Blockly Demo 02_files/MessageTransport.min.js.下載"></script>
+  <script src="./Webduino Blockly Demo 02_files/webduino-blockly.min.js.下載"></script>
+  <script src="./Webduino Blockly Demo 02_files/firebase.min.js.下載"></script>
+  <script src="./Webduino Blockly Demo 02_files/runtime.min.js.下載"></script><script src="./Webduino Blockly Demo 02_files/BitLedMatrix-blockly.js.下載"></script><script src="./Webduino Blockly Demo 02_files/BitLedMatrix.js.下載"></script>
+
+  <style>#demo-area-02-light img {
+  height: 200px;
+  display: none;
+  pointer-events: auto!important;
+}
+
+#demo-area-02-light.on #demo-area-02-on {
+  display: inline-block;
+  pointer-events: auto!important;
+}
+
+#demo-area-02-light.off #demo-area-02-off {
+  display: inline-block;
+  pointer-events: auto!important;
+}</style>
+</head>
+
+<body>
+  <div><div id="demo-area-02-light" class="off">
+    <img src="./Webduino Blockly Demo 02_files/off.jpg" id="demo-area-02-off">
+    <img src="./Webduino Blockly Demo 02_files/on.jpg" id="demo-area-02-on">
+  </div></div>
+
+  <script>var matrix;
+var _E8_AE_8A_E6_95_B8;
+
+
+boardReady({board: 'Bit', device: 'PgysDPSXmimecEeSBK', transport: 'mqtt'}, function (board) {
+  board.samplingInterval = 250;
+  matrix = getMatrix(board, 4, 25);
+  matrix.setColor('#66ff99');
+  _E8_AE_8A_E6_95_B8 = 0;
+  document.getElementById("demo-area-02-light").addEventListener("click", function(){
+    if (document.getElementById("demo-area-02-light").className == "on") {
+       document.getElementById("demo-area-02-light").className = "off";
+    } else {
+      document.getElementById("demo-area-02-light").className = "on";
+    }
+    _E8_AE_8A_E6_95_B8 = (typeof _E8_AE_8A_E6_95_B8 == 'number' ? _E8_AE_8A_E6_95_B8 : 0) + 1;
+    if (_E8_AE_8A_E6_95_B8 % 2 == 1) {
+      matrix.setColor("0033ff3301ffffff0233ff3303ffffff0433ff330533ff3306ffffff0733ff3308ffffff09ffffff0a33ff330b33ff330c33ff330dffffff0e33ff330f33ff3310ffffff1133ff3312ffffff1333ff331433ff3315ffffff1633ff3317ffffff1833ff33");
+    } else {
+      matrix.setColor("00ffff3301ffffff02ffffff03ffffff04ffff3305ffff3306ffffff07ffffff08ffffff09ffffff0affff330bffff330cffff330dffffff0effff330fffff3310ffffff11ffff3312ffffff13ffff3314ffff3315ffff3316ffff3317ffffff18ffff33");
+    }
+  });
+});
+</script>
+
+
+<div id="UMS_TOOLTIP" style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;"></div></body><umsdataelement id="UMSSendDataEventElement"></umsdataelement></html>
